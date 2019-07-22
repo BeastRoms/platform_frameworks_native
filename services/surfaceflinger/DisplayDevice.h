@@ -123,7 +123,6 @@ public:
     void                    setLayerStack(uint32_t stack);
     void                    setDisplaySize(const int newWidth, const int newHeight);
     void                    setProjection(int orientation, const Rect& viewport, const Rect& frame);
-    void                    setTranslate(int x, int y);
 
     int                     getOrientation() const { return mOrientation; }
     uint32_t                getOrientationTransform() const;
@@ -294,11 +293,6 @@ private:
     bool mHasDolbyVision;
     HdrCapabilities mHdrCapabilities;
     const int32_t mSupportedPerFrameMetadata;
-
-    // Screen stabilization
-    int translateX;
-    int translateY;
-    Transform R, TL, TP, S;
 
     // Mappings from desired Dataspace/RenderIntent to the supported
     // Dataspace/ColorMode/RenderIntent.
